@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="noindex">
+
+    <title>{{ title }}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='bootstrap.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='blog.css') }}" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <header>
+      <div class="blog-masthead">
+        <div class="container">
+          <nav class="nav">
+            <!-- <a class="nav-link active" href="#">Home</a> -->
+          </nav>
+        </div>
+      </div>
+
+      <div class="blog-header">
+        <div class="container">
+          <h1 class="blog-title">{{ title }}</h1>
+          <p class="lead blog-description">{{ description }}</p>
+        </div>
+      </div>
+    </header>
+
+    <main role="main" class="container">
+
+      <div class="row">
+
+        <div class="col-sm-9 blog-main">
+
+            {% block body %}{% endblock %}
+
+        </div><!-- /.blog-main -->
+
+      </div><!-- /.row -->
+
+    </main><!-- /.container -->
+
+    <footer class="blog-footer">
+      <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  {%- for article in articles.items %}
+  <div class="blog-post">
+    <h2 class="blog-post-title">
+      <a href="{{ article.link }}">{{ article.title | safe }}</a>
+    </h2>
+    <p class="blog-post-meta">{{ article.updated.strftime("%B %d, %Y") }}</p>
+    <p>{{ article.summary | safe }}</p>
+  </div>
+  {%- endfor %}
+
+  <nav class="blog-pagination text-center">
+    {% if articles.has_next %}
+      <a class="btn btn-outline-primary" href="{{ url_for('show_all', page=articles.next_num) }}">
+        Older
+      </a>
+    {% else %}
+      <p class='btn btn-outline-secondary disabled'>Older</p>
+    {% endif %}
+
+    {% if articles.has_prev %}
+      <a class="btn btn-outline-primary" href="{{ url_for('show_all', page=articles.prev_num) }}">
+        Newer
+      </a>
+    {% else %}
+      <p class='btn btn-outline-secondary disabled'>Newer</p>
+    {% endif %}
+  </nav>
+
+
+<nav class="blog-pagination "
+
+{% endblock %}
